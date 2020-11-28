@@ -1,0 +1,19 @@
+<h2>Контакты</h2>
+
+<%= form_for :contact, url: contacts_path do |f| %>
+  <p>
+    Электронный адрес
+    <br>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    Содержание
+    <br>
+    <%= f.text_area :message %>
+  </p>
+
+  <p>
+    <%=f.submit%>
+  </p>
+<% end %>
