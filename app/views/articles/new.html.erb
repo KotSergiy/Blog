@@ -1,6 +1,17 @@
 <h1>Новая статья</h1>
 
 <%= form_for :article, url: articles_path do |f| %>
+
+  <% if @article && @article.errors.any? %>
+    <p>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li> <%= msg %> </li>
+        <% end %>
+      </ul>
+    </p>
+  <% end %>
+
   <p>
     Название
     <br>
@@ -16,4 +27,5 @@
   <p>
     <%=f.submit%>
   </p>
+
 <% end %>
