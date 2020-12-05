@@ -3,5 +3,10 @@
 <% @articles.each do |article| %>
   <h2><%= article.title %></h2>
   <p><%= article.text %></p>
+  <p>
+    <%= link_to 'Подробнее', article_path(article) %>
+    <br>
+    <%= link_to 'Редактировать', edit_article_path(article) %>
+  </p>
   <hr>
 <%end%>
