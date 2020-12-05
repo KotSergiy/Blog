@@ -5,7 +5,9 @@
   <p><%= article.text %></p>
   <p>
     <%= link_to 'Подробнее', article_path(article) %> |
-    <%= link_to 'Редактировать', edit_article_path(article) %>
+    <%= link_to 'Редактировать', edit_article_path(article) %> |
+    <%= link_to 'Удалить', article_path(article), method: :delete,
+              data: { confirm: 'Вы уверены?' } %>
   </p>
   <hr>
 <%end%>
