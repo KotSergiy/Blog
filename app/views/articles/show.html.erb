@@ -6,10 +6,9 @@
       <p><%= @article.text %></p>
       <hr>
 
-      <h5>Ваш комментарий</h5>
-      <%= form_for([@article, @article.comments.build]) do |f| %>
-        <p><%= f.text_area :body %></p>
-        <p><%=f.submit%></p>
+      <%= bootstrap_form_for([@article, @article.comments.build]) do |f| %>
+        <p><%= f.text_area :body, label: "Ваш комментарий", required: true %></p>
+        <p><%=f.primary "Отправить"%></p>
       <% end %>
       <br>
 
