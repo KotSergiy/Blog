@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 2020_12_27_170938) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "text"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -49,5 +51,6 @@ ActiveRecord::Schema.define(version: 2020_12_27_170938) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
 end
