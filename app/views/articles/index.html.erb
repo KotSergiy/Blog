@@ -4,10 +4,12 @@
   <h2><%= article.title %></h2>
   <p><%= article.text %></p>
   <p>
-    <%= link_to 'Подробнее', article_path(article) %> |
-    <%= link_to 'Редактировать', edit_article_path(article) %> |
-    <%= link_to 'Удалить', article_path(article), method: :delete,
-              data: { confirm: 'Вы уверены?' } %>
+    <%= link_to 'Подробнее', article_path(article) %>
+    <% if article.user_id == current_user.id %>
+       | <%= link_to 'Редактировать', edit_article_path(article) %> |
+      <%= link_to 'Удалить', article_path(article), method: :delete,
+          data: { confirm: 'Вы уверены?' } %>
+    <%end%>
   </p>
   <hr>
 <%end%>

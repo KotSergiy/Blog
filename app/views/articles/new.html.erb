@@ -1,6 +1,6 @@
 <h1>Новая статья</h1>
 
-<%= form_for :article, url: articles_path do |f| %>
+<%= bootstrap_form_for :article, url: articles_path do |f| %>
 
   <% if @article && @article.errors.any? %>
     <p>
@@ -13,19 +13,15 @@
   <% end %>
 
   <p>
-    Название
-    <br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, label: 'Название' %>
   </p>
 
   <p>
-    Содержание
-    <br>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, label: 'Содержание' %>
   </p>
 
   <p>
-    <%=f.submit%>
+    <%=f.primary 'Сохранить'%>
   </p>
 
 <% end %>

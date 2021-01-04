@@ -7,14 +7,27 @@ class ArticlesController < ApplicationController
 
   def show
     @article=Article.find(params[:id])
+    @user=User.find(@article.user_id)
   end
 
   def new
   end
 
+  def create_variant_1
+    @article=Article.new(article_params)
+    @article.user_id=current_user.id
+    if @article.save
+      redirect_to @article
+    else
+      render action: 'new'
+    end
+  end
+
   def create
     @article=Article.new(article_params)
-    if @article.save
+    user=current_user
+    user.articles << @article
+    if user.save
       redirect_to @article
     else
       render action: 'new'
