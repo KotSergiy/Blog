@@ -4,4 +4,8 @@ class Article < ApplicationRecord
 
   has_many :comments
   belongs_to :user
+
+  def subject
+    title
+  end
 end
