@@ -21,5 +21,3 @@
  .field_with_errors textarea{
    border-color: red;
  }
-
- *= require rails_bootstrap_forms
