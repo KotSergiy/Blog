@@ -12,9 +12,15 @@ RSpec.describe Article, type: :model do
 
   describe "#subject" do
     it "returns the article title" do
-      user=create(:user)
-      article=create(:article, title: 'La-la-la', user: user)
+      article=create(:article, title: 'La-la-la')
       expect(article.subject).to eq 'La-la-la'
+    end
+  end
+
+  describe "#last_comment" do
+    it "returns the last comment" do
+      article=create(:article_with_comments)
+      expect(article.last_comment.body).to eq 'comment body 3'
     end
   end
 end
