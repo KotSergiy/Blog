@@ -8,6 +8,8 @@ require 'rspec/rails'
 require './spec/support/factory_bot.rb'
 require 'capybara/rspec'
 require './spec/support/session_helper.rb'
+require 'database_cleaner/active_record'
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
