@@ -1,21 +1,17 @@
-<h2>Редактировать статью</h2>
+<h2><%= t('article.edit') %></h2>
 
-<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+<%= bootstrap_form_for :article, url: article_path(@article), method: :patch do |f| %>
 
   <p>
-    Название
-    <br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, label: 'Название' %>
   </p>
 
   <p>
-    Содержание
-    <br>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, label: 'Содержание' %>
   </p>
 
   <p>
-    <%=f.submit%>
+    <%=f.submit 'Сохранить'%>
   </p>
 
 <% end %>
