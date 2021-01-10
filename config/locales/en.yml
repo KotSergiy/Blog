@@ -34,3 +34,6 @@ en:
 
   contacts:
     contact_us: "Contact Us"
+    contact_sent: "Contact is successfully sent"
+  article:
+    article_new: "New article"
