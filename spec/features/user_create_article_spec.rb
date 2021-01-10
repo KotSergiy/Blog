@@ -12,11 +12,7 @@ feature "Article Creation" do
 
   scenario "allows user to create article" do
     visit new_article_path
-
-    fill_in 'article_title', with: 'Title'
-    fill_in 'article_text', with: 'Text'
-    click_button 'Сохранить'
-
+    rec_article
     expect(page).to have_content I18n.t('article.author')
   end
 

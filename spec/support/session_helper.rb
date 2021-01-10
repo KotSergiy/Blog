@@ -6,3 +6,9 @@ def sign_up
   fill_in :user_password_confirmation, :with => '12345678'
   click_button 'Sign up'
 end
+
+def rec_article
+  fill_in 'article_title', with: 'Title'
+  fill_in 'article_text', with: 'Text'
+  click_button 'Сохранить'
+end
